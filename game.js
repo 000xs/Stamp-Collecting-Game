@@ -1,4 +1,3 @@
- 
 class Game {
   constructor() {
     this.player = new Player(this);
@@ -11,7 +10,7 @@ class Game {
 
     this.startButton.addEventListener("click", () => this.start());
 
-    // settings
+    
     this.stampsToCollect = 5;
     this.currentStamps = 0;
   }
@@ -35,7 +34,6 @@ class Game {
   }
 
   checkCollisions() {
-    
     this.world.stamps.forEach((stamp, index) => {
       if (this.checkCollision(this.player.element, stamp)) {
         stamp.remove();
@@ -47,7 +45,6 @@ class Game {
       }
     });
 
-   
     this.world.enemies.forEach((enemy) => {
       if (this.checkCollision(this.player.element, enemy)) {
         this.player.takeDamage();
@@ -134,21 +131,19 @@ class Player {
   }
 
   update() {
-    // Horizontal 
+    // Horizontal
     if (this.keys.left) this.velocityX = -this.speed;
     else if (this.keys.right) this.velocityX = this.speed;
     else this.velocityX = 0;
 
-    // Vertical 
+    // Vertical
     this.velocityY += this.gravity;
-  
+
     this.x += this.velocityX;
     this.y += this.velocityY;
 
-    
     this.x = Math.max(0, Math.min(this.x, 768));
 
-   
     if (this.y > 548) {
       this.y = 548;
       this.velocityY = 0;
@@ -205,7 +200,6 @@ class World {
       this.stamps.push(stamp);
     }
 
- 
     for (let i = 0; i < 3; i++) {
       const enemy = document.createElement("div");
       enemy.className = "enemy";
@@ -219,7 +213,6 @@ class World {
   }
 
   update() {
- 
     this.enemies.forEach((enemy) => {
       const baseX = parseInt(enemy.dataset.baseX);
       const currentX = parseInt(enemy.style.left);
@@ -233,8 +226,6 @@ class World {
   }
 }
 
- 
 window.addEventListener("load", () => {
   new Game();
 });
- 

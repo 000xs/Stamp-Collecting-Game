@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stamp Collector Game</title>
+    <link referrerpolicy="origin" rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game">
+      <div id="hud">
+        <div class="hud-item">
+          <div id="health-bar">
+            <div id="health-fill"></div>
+          </div>
+          <span>Health</span>
+        </div>
+        <div class="hud-item">
+          <div id="stamp-count">0</div>
+          <span>Stamps</span>
+        </div>
+      </div>
+      <div id="world"></div>
+      <div id="player"></div>
+    </div>
+
+    <div id="menu">
+      <h1>Stamp Collector</h1>
+      <button id="start-button">Start Game</button>
+      <div id="controls">
+        <p>Controls:</p>
+        <p>← → Arrow Keys to Move</p>
+        <p>Space to Jump</p>
+      </div>
+    </div>
+    <script src="game.js"></script>
+   
+  </body>
+</html>
